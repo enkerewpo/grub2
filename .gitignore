@@ -62,6 +62,7 @@ widthspec.bin
 /00_header
 /10_*
 /20_linux_xen
+/25_bli
 /30_os-prober
 /30_uefi-firmware
 /40_custom
