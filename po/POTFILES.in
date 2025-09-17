@@ -1,3 +1,6 @@
+./ascii.h
+./config-util.h
+./config.h
 ./grub-core/boot/decompressor/minilib.c
 ./grub-core/boot/decompressor/none.c
 ./grub-core/boot/decompressor/xz.c
@@ -238,6 +241,10 @@
 ./grub-core/gfxmenu/theme_loader.c
 ./grub-core/gfxmenu/view.c
 ./grub-core/gfxmenu/widget-box.c
+./grub-core/grub_script.tab.c
+./grub-core/grub_script.tab.h
+./grub-core/grub_script.yy.c
+./grub-core/grub_script.yy.h
 ./grub-core/hello/hello.c
 ./grub-core/hook/datehook.c
 ./grub-core/io/bufio.c
@@ -741,6 +748,8 @@
 ./grub-core/script/lexer.c
 ./grub-core/script/main.c
 ./grub-core/script/script.c
+./grub-core/symlist.c
+./grub-core/symlist.h
 ./grub-core/term/arc/console.c
 ./grub-core/term/arc/serial.c
 ./grub-core/term/arm/cros.c
@@ -794,6 +803,8 @@
 ./grub-core/tests/video_checksum.c
 ./grub-core/tests/videotest_checksum.c
 ./grub-core/tests/xnu_uuid_test.c
+./grub-core/trigtables.c
+./grub-core/unidata.c
 ./grub-core/video/bitmap.c
 ./grub-core/video/bitmap_scale.c
 ./grub-core/video/bochs.c
@@ -821,6 +832,11 @@
 ./grub-core/video/sm712.c
 ./grub-core/video/sm712_init.c
 ./grub-core/video/video.c
+./grub_fstest_init.c
+./grub_script.tab.c
+./grub_script.tab.h
+./grub_script.yy.c
+./grub_script.yy.h
 ./include/grub/acorn_filecore.h
 ./include/grub/acpi.h
 ./include/grub/aout.h
@@ -923,6 +939,8 @@
 ./include/grub/fs.h
 ./include/grub/fshelp.h
 ./include/grub/gcry/types.h
+./include/grub/gcrypt/g10lib.h
+./include/grub/gcrypt/gcrypt.h
 ./include/grub/gcrypt/gpg-error.h
 ./include/grub/gdb.h
 ./include/grub/gfxmenu_model.h
@@ -1257,6 +1275,7 @@
 ./include/xen/trace.h
 ./include/xen/xen-compat.h
 ./include/xen/xen.h
+./libgrub_a_init.c
 ./tests/cmp_unit_test.c
 ./tests/date_unit_test.c
 ./tests/example_unit_test.c
@@ -1309,3 +1328,4 @@
 ./util/setup_bios.c
 ./util/setup_sparc.c
 ./util/spkmodem-recv.c
+./widthspec.h

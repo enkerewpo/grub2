@@ -1,7 +1,7 @@
-This is grub-dev.info, produced by makeinfo version 6.3 from
+This is grub-dev.info, produced by makeinfo version 6.8 from
 grub-dev.texi.
 
-This developer manual is for GNU GRUB (version 2.12, 31 August 2023).
+This developer manual is for GNU GRUB (version 2.12, 17 September 2025).
 
    Copyright (C) 1999,2000,2001,2002,2004,2005,2006,2008,2009,2010,2011
 Free Software Foundation, Inc.
@@ -27,7 +27,8 @@ of architectures.
 
    This edition documents version 2.12.
 
-   This developer manual is for GNU GRUB (version 2.12, 31 August 2023).
+   This developer manual is for GNU GRUB (version 2.12, 17 September
+2025).
 
    Copyright (C) 1999,2000,2001,2002,2004,2005,2006,2008,2009,2010,2011
 Free Software Foundation, Inc.
@@ -2266,6 +2267,7 @@ File: grub-dev.info,  Node: Font Metrics,  Prev: File Structure,  Up: PFF2 Font 
 
  [image src="font_char_metrics.png" text="Please fill this in." ]
 
+
    An illustration of how the various font metrics apply to characters.
 
 
@@ -2944,52 +2946,57 @@ Index
 
 
 Tag Table:
-Node: Top639
-Node: Getting the source code1856
-Node: Coding style2848
-Node: Naming Conventions3257
-Node: Functions3542
-Node: Variables4416
-Node: Types5531
-Node: Macros6132
-Node: Comments6464
-Node: Multi-Line Comments7073
-Node: Finding your way around7998
-Node: Contributing Changes11314
-Node: Getting started12430
-Node: Typical Developer Experience16482
-Node: When you are approved for write access to project's files17524
-Node: Setting up and running test suite18957
-Node: Updating External Code19654
-Node: Gnulib19961
-Node: jsmn21954
-Node: minilzo22425
-Node: Debugging23132
-Node: i386-pc25153
-Node: x86_64-efi27698
-Node: OVMF debug log34181
-Node: Using the gdbinfo command35356
-Node: Porting35654
-Node: Error Handling47408
-Node: Stack and heap size52500
-Node: BIOS port memory map55300
-Node: Video Subsystem56151
-Node: Video API56625
-Node: Example usage of Video API77074
-Node: Bitmap API78654
-Node: PFF2 Font File Format81187
-Node: Introduction81427
-Node: File Structure82930
-Node: Font Metrics87848
-Node: Graphical Menu Software Design88996
-Node: Introduction_289288
-Node: Startup Sequence90022
-Node: GUI Components90873
-Node: Command Line Window93474
-Node: Verifiers framework94426
-Node: Lockdown framework97033
-Node: Copying This Manual97975
-Node: GNU Free Documentation License98219
-Node: Index120612
+Node: Top642
+Node: Getting the source code1862
+Node: Coding style2854
+Node: Naming Conventions3263
+Node: Functions3548
+Node: Variables4422
+Node: Types5537
+Node: Macros6138
+Node: Comments6470
+Node: Multi-Line Comments7079
+Node: Finding your way around8004
+Node: Contributing Changes11320
+Node: Getting started12436
+Node: Typical Developer Experience16488
+Node: When you are approved for write access to project's files17530
+Node: Setting up and running test suite18963
+Node: Updating External Code19660
+Node: Gnulib19967
+Node: jsmn21960
+Node: minilzo22431
+Node: Debugging23138
+Node: i386-pc25159
+Node: x86_64-efi27704
+Node: OVMF debug log34187
+Node: Using the gdbinfo command35362
+Node: Porting35660
+Node: Error Handling47414
+Node: Stack and heap size52506
+Node: BIOS port memory map55306
+Node: Video Subsystem56157
+Node: Video API56631
+Node: Example usage of Video API77080
+Node: Bitmap API78660
+Node: PFF2 Font File Format81193
+Node: Introduction81433
+Node: File Structure82936
+Node: Font Metrics87854
+Node: Graphical Menu Software Design89003
+Node: Introduction_289295
+Node: Startup Sequence90029
+Node: GUI Components90880
+Node: Command Line Window93481
+Node: Verifiers framework94433
+Node: Lockdown framework97040
+Node: Copying This Manual97982
+Node: GNU Free Documentation License98226
+Node: Index120619
 
 End Tag Table
+
+
+Local Variables:
+coding: utf-8
+End:

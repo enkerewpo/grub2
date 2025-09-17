@@ -1,6 +1,6 @@
-This is grub.info, produced by makeinfo version 6.3 from grub.texi.
+This is grub.info, produced by makeinfo version 6.8 from grub.texi.
 
-This manual is for GNU GRUB (version 2.12, 5 December 2023).
+This manual is for GNU GRUB (version 2.12, 17 September 2025).
 
    Copyright (C)
 1999,2000,2001,2002,2004,2006,2008,2009,2010,2011,2012,2013 Free
@@ -35,7 +35,7 @@ architectures.
 
    This edition documents version 2.12.
 
-   This manual is for GNU GRUB (version 2.12, 5 December 2023).
+   This manual is for GNU GRUB (version 2.12, 17 September 2025).
 
    Copyright (C)
 1999,2000,2001,2002,2004,2006,2008,2009,2010,2011,2012,2013 Free
@@ -50,7 +50,7 @@ Software Foundation, Inc.
 
 * Introduction::                Capturing the spirit of GRUB
 * Naming convention::           Names of your drives in GRUB
-* OS-specific notes about grub tools:: 
+* OS-specific notes about grub tools::
                                 Some notes about OS-specific behaviour of GRUB
                                 tools
 * Installation::                Installing GRUB on your drive
@@ -4001,9 +4001,9 @@ File: grub.info,  Node: menuentry,  Next: submenu,  Up: Menu-specific commands
 17.1.1 menuentry
 ----------------
 
- -- Command: menuentry TITLE ['--class=class' ...] ['--users=users']
-          ['--unrestricted'] ['--hotkey=key'] ['--id=id'] [ARG ...] {
-          COMMAND; ... }
+ -- Command: menuentry TITLE [--class=class ...] [--users=users]
+          [--unrestricted] [--hotkey=key] [--id=id] [ARG ...] { COMMAND;
+          ... }
      This defines a GRUB menu entry named TITLE.  When this entry is
      selected from the menu, GRUB will set the CHOSEN environment
      variable to value of '--id' if '--id' is given, execute the list of
@@ -4039,9 +4039,8 @@ File: grub.info,  Node: submenu,  Prev: menuentry,  Up: Menu-specific commands
 17.1.2 submenu
 --------------
 
- -- Command: submenu TITLE ['--class=class' ...] ['--users=users']
-          ['--unrestricted'] ['--hotkey=key'] ['--id=id'] { MENU ENTRIES
-          ... }
+ -- Command: submenu TITLE [--class=class ...] [--users=users]
+          [--unrestricted] [--hotkey=key] [--id=id] { MENU ENTRIES ... }
      This defines a submenu.  An entry called TITLE will be added to the
      menu; when that entry is selected, a new menu will be displayed
      showing all the entries within this submenu.
@@ -4108,7 +4107,7 @@ File: grub.info,  Node: chainloader,  Next: initrd,  Up: Loader commands
 17.2.1 chainloader
 ------------------
 
- -- Command: chainloader ['--force'] file [args...]
+ -- Command: chainloader [--force] file [args...]
      Load FILE as a chain-loader.  Like any other file loaded by the
      filesystem code, it can use the blocklist notation (*note Block
      list syntax::) to grab the first sector of the current partition
@@ -4264,8 +4263,8 @@ File: grub.info,  Node: serial,  Next: terminal_input,  Up: General commands
 17.3.1 serial
 -------------
 
- -- Command: serial ['--unit=unit'] ['--port=port'] ['--speed=speed']
-          ['--word=word'] ['--parity=parity'] ['--stop=stop']
+ -- Command: serial [--unit=unit] [--port=port] [--speed=speed]
+          [--word=word] [--parity=parity] [--stop=stop]
      Initialize a serial device.  UNIT is a number in the range 0-3
      specifying which serial port to use; default is 0, which
      corresponds to the port often called COM1.
@@ -4315,8 +4314,8 @@ File: grub.info,  Node: terminal_input,  Next: terminal_output,  Prev: serial,  
 17.3.2 terminal_input
 ---------------------
 
- -- Command: terminal_input ['--append'|'--remove'] [terminal1]
-          [terminal2] ...
+ -- Command: terminal_input [--append|--remove] [terminal1] [terminal2]
+          ...
      List or select an input terminal.
 
      With no arguments, list the active and available input terminals.
@@ -4335,8 +4334,8 @@ File: grub.info,  Node: terminal_output,  Next: terminfo,  Prev: terminal_input,
 17.3.3 terminal_output
 ----------------------
 
- -- Command: terminal_output ['--append'|'--remove'] [terminal1]
-          [terminal2] ...
+ -- Command: terminal_output [--append|--remove] [terminal1] [terminal2]
+          ...
      List or select an output terminal.
 
      With no arguments, list the active and available output terminals.
@@ -4355,7 +4354,7 @@ File: grub.info,  Node: terminfo,  Prev: terminal_output,  Up: General commands
 17.3.4 terminfo
 ---------------
 
- -- Command: terminfo ['-a'|'-u'|'-v'] ['-g WxH'] [term] [type]
+ -- Command: terminfo [-a|-u|-v] [-g WxH] [term] [type]
      Define the capabilities of your terminal by giving the name of an
      entry in the terminfo database, which should correspond roughly to
      a 'TERM' environment variable in Unix.
@@ -4476,7 +4475,7 @@ File: grub.info,  Node: [,  Next: acpi,  Up: Command-line commands
 17.4.1 [
 --------
 
- -- Command: '[' expression ']'
+ -- Command: [ expression ]
      Alias for 'test EXPRESSION' (*note test::).
 
 
@@ -4485,11 +4484,10 @@ File: grub.info,  Node: acpi,  Next: authenticate,  Prev: [,  Up: Command-line c
 17.4.2 acpi
 -----------
 
- -- Command: acpi ['-1'|'-2']
-          ['--exclude=table1,...'|'--load-only=table1,...']
-          ['--oemid=id'] ['--oemtable=table'] ['--oemtablerev=rev']
-          ['--oemtablecreator=creator'] ['--oemtablecreatorrev=rev']
-          ['--no-ebda'] filename ...
+ -- Command: acpi [-1|-2] [--exclude=table1,...|--load-only=table1,...]
+          [--oemid=id] [--oemtable=table] [--oemtablerev=rev]
+          [--oemtablecreator=creator] [--oemtablecreatorrev=rev]
+          [--no-ebda] filename ...
      Modern BIOS systems normally implement the Advanced Configuration
      and Power Interface (ACPI), and define various tables that describe
      the interface between an ACPI-compliant operating system and the
@@ -4541,7 +4539,7 @@ File: grub.info,  Node: background_image,  Next: badram,  Prev: background_color
 17.4.5 background_image
 -----------------------
 
- -- Command: background_image [['--mode' 'stretch'|'normal'] file]
+ -- Command: background_image [[--mode stretch|normal] file]
      Load background image for active terminal from FILE.  Image is
      stretched to fill up entire screen unless option '--mode' 'normal'
      is given.  Without arguments remove currently loaded background
@@ -4605,7 +4603,7 @@ File: grub.info,  Node: cat,  Next: clear,  Prev: boot,  Up: Command-line comman
 17.4.9 cat
 ----------
 
- -- Command: cat ['--dos'] file
+ -- Command: cat [--dos] file
      Display the contents of the file FILE.  This command may be useful
      to remind you of your OS's root partition:
 
@@ -4669,7 +4667,7 @@ File: grub.info,  Node: cmp,  Next: configfile,  Prev: cmostest,  Up: Command-li
 17.4.14 cmp
 -----------
 
- -- Command: cmp ['-v'] file1 file2
+ -- Command: cmp [-v] file1 file2
      Compare the file FILE1 with the file FILE2.  If they are completely
      identical, '$?' will be set to 0.  Otherwise, if the files are not
      identical, '$?' will be set to a nonzero value.
@@ -4732,9 +4730,8 @@ File: grub.info,  Node: cryptomount,  Next: cutmem,  Prev: crc,  Up: Command-lin
 17.4.18 cryptomount
 -------------------
 
- -- Command: cryptomount [ ['-p' password] | ['-k' keyfile ['-O'
-          keyoffset] ['-S' keysize] ] ] ['-H' file] device|'-u'
-          uuid|'-a'|'-b'
+ -- Command: cryptomount [ [-p password] | [-k keyfile [-O keyoffset]
+          [-S keysize] ] ] [-H file] device|-u uuid|-a|-b
      Setup access to encrypted device.  A passphrase will be requested
      interactively, if neither the '-p' nor '-k' options are given.  The
      option '-p' can be used to supply a passphrase (useful for
@@ -4846,7 +4843,7 @@ File: grub.info,  Node: drivemap,  Next: echo,  Prev: distrust,  Up: Command-lin
 17.4.23 drivemap
 ----------------
 
- -- Command: drivemap '-l'|'-r'|['-s'] from_drive to_drive
+ -- Command: drivemap -l|-r|[-s] from_drive to_drive
      Without options, map the drive FROM_DRIVE to the drive TO_DRIVE.
      This is necessary when you chain-load some operating systems, such
      as DOS, if such an OS resides at a non-first drive.  For
@@ -4872,7 +4869,7 @@ File: grub.info,  Node: echo,  Next: efitextmode,  Prev: drivemap,  Up: Command-
 17.4.24 echo
 ------------
 
- -- Command: echo ['-n'] ['-e'] string ...
+ -- Command: echo [-n] [-e] string ...
      Display the requested text and, unless the '-n' option is used, a
      trailing new line.  If there is more than one string, they are
      separated by spaces in the output.  As usual in GRUB commands,
@@ -4989,7 +4986,7 @@ File: grub.info,  Node: fwsetup,  Next: gdbinfo,  Prev: false,  Up: Command-line
 17.4.29 fwsetup
 ---------------
 
- -- Command: fwsetup ['--is-supported']
+ -- Command: fwsetup [--is-supported]
      Reboot into the firmware setup menu.  If '--is-supported' option is
      specified, instead check whether the firmware supports a setup menu
      and exit successfully if so.
@@ -5049,7 +5046,7 @@ File: grub.info,  Node: halt,  Next: hashsum,  Prev: gptsync,  Up: Command-line 
 17.4.33 halt
 ------------
 
- -- Command: halt ['--no-apm']
+ -- Command: halt [--no-apm]
      The command halts the computer.  On the i386-pc target, the
      '--no-apm' option, or short '-n', is specified, no APM BIOS call is
      performed.  Otherwise, the computer is shut down using APM on that
@@ -5061,8 +5058,8 @@ File: grub.info,  Node: hashsum,  Next: help,  Prev: halt,  Up: Command-line com
 17.4.34 hashsum
 ---------------
 
- -- Command: hashsum '--hash' hash '--keep-going' '--uncompress'
-          '--check' file ['--prefix' dir]|file ...
+ -- Command: hashsum --hash hash --keep-going --uncompress --check file
+          [--prefix dir]|file ...
      Compute or verify file hashes.  Hash type is selected with option
      '--hash'.  Supported hashes are: 'adler32', 'crc64', 'crc32',
      'crc32rfc1510', 'crc24rfc2440', 'md4', 'md5', 'ripemd160', 'sha1',
@@ -5126,7 +5123,7 @@ File: grub.info,  Node: keystatus,  Next: list_env,  Prev: insmod,  Up: Command-
 17.4.38 keystatus
 -----------------
 
- -- Command: keystatus ['--shift'] ['--ctrl'] ['--alt']
+ -- Command: keystatus [--shift] [--ctrl] [--alt]
      Return true if the Shift, Control, or Alt modifier keys are held
      down, as requested by options.  This is useful in scripting, to
      allow some user control over behaviour without having to wait for a
@@ -5142,7 +5139,7 @@ File: grub.info,  Node: list_env,  Next: list_trusted,  Prev: keystatus,  Up: Co
 17.4.39 list_env
 ----------------
 
- -- Command: list_env ['--file' file]
+ -- Command: list_env [--file file]
      List all variables in the environment block file.  *Note
      Environment block::.
 
@@ -5169,7 +5166,7 @@ File: grub.info,  Node: load_env,  Next: loadfont,  Prev: list_trusted,  Up: Com
 17.4.41 load_env
 ----------------
 
- -- Command: load_env ['--file' file] ['--skip-sig']
+ -- Command: load_env [--file file] [--skip-sig]
           [whitelisted_variable_name] ...
      Load all variables from the environment block file into the
      environment.  *Note Environment block::.
@@ -5218,7 +5215,7 @@ File: grub.info,  Node: loopback,  Next: ls,  Prev: loadfont,  Up: Command-line 
 17.4.43 loopback
 ----------------
 
- -- Command: loopback ['-d'] ['-D'] device file
+ -- Command: loopback [-d] [-D] device file
      Make the device named DEVICE correspond to the contents of the
      filesystem image in FILE.  For example:
 
@@ -5420,7 +5417,7 @@ File: grub.info,  Node: plainmount,  Next: play,  Prev: password_pbkdf2,  Up: Co
 17.4.56 plainmount
 ------------------
 
- -- Command: plainmount device '-c' cipher '-s' key size ['-h' hash]
+ -- Command: plainmount device -c cipher -s key size [-h hash]
      ['-S' sector size] ['-p' password] ['-u' uuid] [['-d' keyfile]
      ['-O' keyfile offset]]
 
@@ -5468,7 +5465,7 @@ File: grub.info,  Node: plainmount,  Next: play,  Prev: password_pbkdf2,  Up: Co
 
      The optional parameter '-S' specifies encrypted device sector size.
      It must be at least 512 bytes long (default value) and a power of
-     2.  (1) (*note plainmount-Footnote-1::).  Disk sector size is
+     2.  (1)  (*note plainmount-Footnote-1::).  Disk sector size is
      configured when creating the encrypted volume.  Attempting to
      decrypt volumes with a different sector size than it was created
      with will not result in an error, but will decrypt to random bytes
@@ -5520,9 +5517,8 @@ File: grub.info,  Node: probe,  Next: rdmsr,  Prev: play,  Up: Command-line comm
 17.4.58 probe
 -------------
 
- -- Command: probe ['--set' var]
-          '--driver'|'--partmap'|'--fs'|'--fs-uuid'|'--label'|'--part-uuid'
-          device
+ -- Command: probe [--set var]
+          --driver|--partmap|--fs|--fs-uuid|--label|--part-uuid device
      Retrieve device information.  If option '--set' is given, assign
      result to variable VAR, otherwise print information on the screen.
 
@@ -5577,7 +5573,7 @@ File: grub.info,  Node: regexp,  Next: rmmod,  Prev: reboot,  Up: Command-line c
 17.4.62 regexp
 --------------
 
- -- Command: regexp ['--set' [number:]var] regexp string
+ -- Command: regexp [--set [number:]var] regexp string
      Test if regular expression REGEXP matches STRING.  Supported
      regular expressions are POSIX.2 Extended Regular Expressions.  If
      option '--set' is given, store NUMBERth matched subexpression in
@@ -5599,7 +5595,7 @@ File: grub.info,  Node: save_env,  Next: search,  Prev: rmmod,  Up: Command-line
 17.4.64 save_env
 ----------------
 
- -- Command: save_env ['--file' file] var ...
+ -- Command: save_env [--file file] var ...
      Save the named variables from the environment to the environment
      block file.  *Note Environment block::.
 
@@ -5623,8 +5619,8 @@ File: grub.info,  Node: search,  Next: sendkey,  Prev: save_env,  Up: Command-li
 17.4.65 search
 --------------
 
- -- Command: search ['--file'|'--label'|'--fs-uuid'] ['--set' [var]]
-          ['--no-floppy'|'--efidisk-only'] name
+ -- Command: search [--file|--label|--fs-uuid] [--set [var]]
+          [--no-floppy|--efidisk-only] name
      Search devices by file ('-f', '--file'), filesystem label ('-l',
      '--label'), or filesystem UUID ('-u', '--fs-uuid').
 
@@ -5659,8 +5655,8 @@ File: grub.info,  Node: sendkey,  Next: set,  Prev: search,  Up: Command-line co
 ---------------
 
  -- Command: sendkey
-          ['--num'|'--caps'|'--scroll'|'--insert'|'--pause'|'--left-shift'|'--right-shift'|'--sysrq'|'--numkey'|'--capskey'|'--scrollkey'|'--insertkey'|'--left-alt'|'--right-alt'|'--left-ctrl'|'--right-ctrl'
-          'on'|'off']... ['no-led'] keystroke
+          [--num|--caps|--scroll|--insert|--pause|--left-shift|--right-shift|--sysrq|--numkey|--capskey|--scrollkey|--insertkey|--left-alt|--right-alt|--left-ctrl|--right-ctrl
+          on|off]... [no-led] keystroke
      Insert keystrokes into the keyboard buffer when booting.  Sometimes
      an operating system or chainloaded boot loader requires particular
      keys to be pressed: for example, one might need to press a
@@ -5842,7 +5838,7 @@ File: grub.info,  Node: sleep,  Next: smbios,  Prev: sha512sum,  Up: Command-lin
 17.4.71 sleep
 -------------
 
- -- Command: sleep ['--verbose'] ['--interruptible'] count
+ -- Command: sleep [--verbose] [--interruptible] count
      Sleep for COUNT seconds.  If option '--interruptible' is given,
      allow pressing <ESC>, <F4> or holding down <SHIFT> to interrupt
      sleep.  With '--verbose' show countdown of remaining seconds.  Exit
@@ -5855,10 +5851,9 @@ File: grub.info,  Node: smbios,  Next: source,  Prev: sleep,  Up: Command-line c
 17.4.72 smbios
 --------------
 
- -- Command: smbios ['--type' TYPE] ['--handle' HANDLE] ['--match'
-          MATCH] ('--get-byte' | '--get-word' | '--get-dword' |
-          '--get-qword' | '--get-string' | '--get-uuid') OFFSET ['--set'
-          VARIABLE]
+ -- Command: smbios [--type TYPE] [--handle HANDLE] [--match MATCH]
+          (--get-byte | --get-word | --get-dword | --get-qword |
+          --get-string | --get-uuid) OFFSET [--set VARIABLE]
      Retrieve SMBIOS information.
 
      The 'smbios' command returns the value of a field in an SMBIOS
@@ -6016,7 +6011,7 @@ File: grub.info,  Node: trust,  Next: unset,  Prev: true,  Up: Command-line comm
 17.4.76 trust
 -------------
 
- -- Command: trust ['--skip-sig'] pubkey_file
+ -- Command: trust [--skip-sig] pubkey_file
      Read public key from PUBKEY_FILE and add it to GRUB's internal list
      of trusted public keys.  These keys are used to validate digital
      signatures when environment variable 'check_signatures' is set to
@@ -6042,7 +6037,7 @@ File: grub.info,  Node: verify_detached,  Next: videoinfo,  Prev: unset,  Up: Co
 17.4.78 verify_detached
 -----------------------
 
- -- Command: verify_detached ['--skip-sig'] file signature_file
+ -- Command: verify_detached [--skip-sig] file signature_file
           [pubkey_file]
      Verifies a GPG-style detached signature, where the signed file is
      FILE, and the signature itself is in file SIGNATURE_FILE.
@@ -6143,7 +6138,7 @@ File: grub.info,  Node: net_add_route,  Next: net_bootp,  Prev: net_add_dns,  Up
 17.5.3 net_add_route
 --------------------
 
- -- Command: net_add_route SHORTNAME IP[/PREFIX] [INTERFACE | 'gw'
+ -- Command: net_add_route SHORTNAME IP[/PREFIX] [INTERFACE | gw
           GATEWAY]
      Add route to network with address IP as modified by PREFIX via
      either local INTERFACE or GATEWAY.  PREFIX is optional and defaults
